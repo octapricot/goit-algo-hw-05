@@ -20,8 +20,7 @@ def parse_input(user_input):
 # Додана обробка помилок для команди add_contact
 @input_error
 def add_contact(args, contacts):
-    if len(args) != 2:
-        raise ValueError
+    # Прибрана перевірка len(args) для перевірки кількості аргументів 
     name, phone = args
     contacts[name] = phone
     return "Contact added." 
@@ -29,8 +28,7 @@ def add_contact(args, contacts):
 # Додана обробка помилок для команди change_contact
 @input_error
 def change_contact(args, contacts):
-    if len(args) != 2:
-        raise ValueError
+    # Прибрана перевірка len(args) для перевірки кількості аргументів
     name, phone = args 
     if name in contacts:
         contacts[name] = phone 
@@ -41,8 +39,7 @@ def change_contact(args, contacts):
 # Додана обробка помилок для команди show_phone
 @input_error
 def show_phone(args, contacts): 
-    if len(args) != 1:
-        raise IndexError
+    # Прибрана перевірка len(args) для перевірки кількості аргументів
     name = args[0]
     if name in contacts:
         return f"{name}: {contacts[name]}"
